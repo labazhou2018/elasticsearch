@@ -16,6 +16,7 @@ import java.util.Collections;
 import java.util.Map;
 
 /**
+ * Description:rest client api
  * @Date: 2019/3/13 10:55
  **/
 public class LowLevelClientAPI {
@@ -39,8 +40,6 @@ public class LowLevelClientAPI {
 		HttpEntity entity = new NStringEntity(queryString, ContentType.APPLICATION_JSON);
 
 		try {
-
-
 
 			Response response = restClient.performRequest("GET", "/some_important_index*/_search", params, entity);
 			System.out.println(response.getStatusLine().getStatusCode());

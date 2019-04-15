@@ -32,6 +32,7 @@ public class ConfigUtils {
     private static String clientTransportSniff;
 
     private static Properties properties = new Properties();
+
     static{
         try {
             ClassLoader classLoader = ConfigUtils.class.getClassLoader();
@@ -44,7 +45,7 @@ public class ConfigUtils {
 
     }
 
-    private static void init() {
+    static void init() {
 
         esClusterName = properties.getProperty("elastic.cluster.name");
         esClusterDiscoverHostName = properties.getProperty("elastic.cluster.discover.hostname");

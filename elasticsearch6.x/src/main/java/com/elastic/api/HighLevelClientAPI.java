@@ -4,6 +4,7 @@ import com.elastic.client.highlevelclient.HighLevelClient;
 import org.elasticsearch.client.RestHighLevelClient;
 
 /**
+ * Description:high level rest client api
  * @Date: 2019/3/13 15:48
  **/
 public class HighLevelClientAPI {
@@ -13,5 +14,4 @@ public class HighLevelClientAPI {
 	public void searh(){
 
 	}
-
 }
