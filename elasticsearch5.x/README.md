@@ -5,7 +5,7 @@ JDK 1.8
 Maven 3.5
 介绍
 java 连接 elasticsearch5.x 集群代码
-———— package elasticsearch5.x 包含两种连接方式:
+———— package elasticsearch5.x 包含以下几种连接方式:
 
 
 ### TransportClient
