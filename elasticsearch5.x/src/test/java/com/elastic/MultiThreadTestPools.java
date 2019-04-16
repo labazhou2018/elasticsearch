@@ -31,7 +31,7 @@ public class MultiThreadTestPools {
 		AtomicReference<Set<TransportClientNodeConfig>> nodesReference = new AtomicReference<Set<TransportClientNodeConfig>>();
 		nodesReference.set(nodeSets);
 
-		/*配置线程池熟悉*/
+		/*配置线程池*/
 		TransportClientPoolConfig transportClientPoolConfig = new TransportClientPoolConfig();
 
 		final TransportClientPool pool = new TransportClientPool(nodesReference, transportClientPoolConfig);
