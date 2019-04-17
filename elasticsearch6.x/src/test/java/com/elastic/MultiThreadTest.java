@@ -33,7 +33,7 @@ public class MultiThreadTest {
 				executorService.execute(new Runnable() {
 					@Override
 					public void run() {
-						System.out.println(("第" + index + "次获取到了连接对象————地址:" + HighLevelClient.getClient().toString()));
+						System.out.println(("第" + index + "次获取到了连接对象————地址:" + HighLevelClient.getClient()));
 					}
 				});
 			}
@@ -41,6 +41,7 @@ public class MultiThreadTest {
 		}
 		executorService.shutdown();
 
+        //关闭线程池
 		try {
 			while (!executorService.awaitTermination(10000, TimeUnit.MILLISECONDS)) {
 				System.out.println("10秒没有执行完，强制关闭线程池");

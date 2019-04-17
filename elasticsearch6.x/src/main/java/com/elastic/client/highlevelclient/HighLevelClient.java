@@ -4,7 +4,6 @@ import com.elastic.client.ClientBuilders;
 import com.elastic.exception.ESIoException;
 import org.elasticsearch.client.RestClientBuilder;
 import org.elasticsearch.client.RestHighLevelClient;
-
 import java.io.IOException;
 
 /**

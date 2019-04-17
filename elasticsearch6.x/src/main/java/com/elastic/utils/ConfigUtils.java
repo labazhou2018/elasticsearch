@@ -1,9 +1,5 @@
 package com.elastic.utils;
 
-
-import com.elastic.exception.ESIoException;
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
