@@ -6,6 +6,7 @@ import org.apache.commons.pool2.impl.GenericObjectPool;
 import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
 
 /**
+ * 池化技术
  * @Date: 2019/3/7 11:38
  **/
 public class Pool<T> implements Cloneable {

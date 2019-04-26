@@ -65,8 +65,7 @@ public class TransportClientBuild {
 	}
 
 	public static void main(String[] args) {
-		getClient();
-		getClient().toString();
+		/*client 测试*/
 		System.out.println("获取client 对象地址：" + getClient().toString());
 	}
 
