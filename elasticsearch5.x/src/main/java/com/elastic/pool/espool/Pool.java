@@ -13,10 +13,6 @@ public class Pool<T> implements Cloneable {
 
 	protected GenericObjectPool<T> internalPool ;
 
-	public Pool(){
-		super();
-	}
-
 	public Pool(final GenericObjectPoolConfig poolConfig, PooledObjectFactory<T> factory){
 		initPool(poolConfig, factory);
 	}
