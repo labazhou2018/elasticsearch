@@ -9,6 +9,7 @@ import org.junit.Test;
 
 
 /**
+   测试类描述
  * Unit test for simple App.
  */
 public class SingleThreadTest {

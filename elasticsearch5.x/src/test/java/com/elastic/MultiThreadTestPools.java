@@ -13,7 +13,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 
-/**
+/**测试类描述
  * @Date: 2019/3/15 11:24
  **/
 public class MultiThreadTestPools {
