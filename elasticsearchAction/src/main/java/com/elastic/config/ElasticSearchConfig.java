@@ -1,4 +1,4 @@
-package com.elastic.springdataclient;
+package com.elastic.config;
 
 import org.elasticsearch.client.Client;
 import org.elasticsearch.client.transport.TransportClient;
@@ -14,15 +14,11 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 /**
- * @Date: 2019/3/4 15:53
- * Spring boot -data elasticsearch 连接集群的方式
- *
- * 如果熟悉ES，不建议使用该方式，原因如下：
- *          集成版本的client和集群版本不，且集成版本包含其他第三方jar包和项目引用jar包容易冲突；
- *          集成版本的client API会被去掉一部分，不能完全体现ElasticSearch特性；
+ * ES-Client封装工具类
+ * @Date: 2019/12/19 15:32
  **/
 @Configuration("classpath:elasticsearch.properties")
-public class SpringDataClientBuild {
+public class ElasticSearchConfig {
 
 	@Value("${elastic.cluster.name}")
 	private String CLUSTER_NAME;
@@ -39,7 +35,7 @@ public class SpringDataClientBuild {
 	 * prototype（原型）：对这个bean的每次请求都会创建一个新的bean实例，类似于new。
 	 */
 	@Bean
-	@Scope("prototype")
+	@Scope("singleton")
 	public Client getClient() {
 
 		String[] hostNamesPort = CLUSTER_HOSTNAME_PORT.split(",");
@@ -77,5 +73,4 @@ public class SpringDataClientBuild {
 		Client client = transportClient;
 		return client;
 	}
-
 }
