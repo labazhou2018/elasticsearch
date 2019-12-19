@@ -6,7 +6,11 @@
 
 	<groupId>com.elastic</groupId>
 	<artifactId>elasticsearch5.x</artifactId>
+	<packaging>pom</packaging>
 	<version>1.0-SNAPSHOT</version>
+	<modules>
+		<module>../elasticsearchAction</module>
+	</modules>
 
 
 	<dependencies>
