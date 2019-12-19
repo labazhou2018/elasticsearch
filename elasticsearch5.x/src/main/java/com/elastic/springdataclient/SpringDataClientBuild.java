@@ -34,9 +34,9 @@ public class SpringDataClientBuild {
 	private String CLUSTER_HOSTNAME_PORT;
 
 	/**
-	 * 在Spring中，bean可以被定义为两种模式：prototype（多例）和singleton（单例）
+	 * 在Spring中，bean可以被定义为两种模式：prototype（原型）和singleton（单例）
 	 * singleton（单例）：只有一个共享的实例存在，所有对这个bean的请求都会返回这个唯一的实例。Spring bean 默认是单例模式.
-	 * prototype（多例）：对这个bean的每次请求都会创建一个新的bean实例，类似于new。
+	 * prototype（原型）：对这个bean的每次请求都会创建一个新的bean实例，类似于new。
 	 */
 	@Bean
 	@Scope("prototype")

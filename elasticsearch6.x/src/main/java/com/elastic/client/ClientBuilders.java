@@ -8,7 +8,6 @@ import org.apache.http.impl.nio.client.HttpAsyncClientBuilder;
 import org.apache.http.message.BasicHeader;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestClientBuilder;
-import org.elasticsearch.client.RestHighLevelClient;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -23,15 +22,16 @@ public class ClientBuilders {
 
 	/**
 	 * 构建一个简单的RestClientBuilder方便测试
+	 *
 	 * @return
 	 */
-	public RestClientBuilder getSimpleClientBuilder(){
-		String [] ipHosts = CLUSTER_HOSTNAME_PORT.split(",");
+	public RestClientBuilder getSimpleClientBuilder() {
+		String[] ipHosts = CLUSTER_HOSTNAME_PORT.split(",");
 		List<HttpHost> httpHostsList = Stream.of(ipHosts)
 				.map(this::createHttpHost)
 				.collect(Collectors.toList());
 
-		HttpHost [] httpHosts = httpHostsList.toArray(new HttpHost[httpHostsList.size()]);
+		HttpHost[] httpHosts = httpHostsList.toArray(new HttpHost[httpHostsList.size()]);
 
 		RestClientBuilder builder = RestClient.builder(httpHosts);
 		return builder;
@@ -43,12 +43,13 @@ public class ClientBuilders {
 
 	/**
 	 * 初始化 clientBuilder的详细说明
+	 *
 	 * @return
 	 */
 	public static RestClientBuilder getClientBulider() {
 
 
-		String [] hostNamesPort = CLUSTER_HOSTNAME_PORT.split(",");
+		String[] hostNamesPort = CLUSTER_HOSTNAME_PORT.split(",");
 
 		String host;
 		int port;
