@@ -1,18 +1,19 @@
-package com.elastic.beans.es;
+package com.elastic.beans.domain;
 
 import org.springframework.data.elasticsearch.annotations.Field;
+
+import java.io.Serializable;
 
 import static org.springframework.data.elasticsearch.annotations.FieldType.Text;
 
 /**
- * 用户实体对应的ES实体
- * @Date: 2019/12/19 17:22
+ *学生实体
+ * @Date: 2019/12/19 17:28
  **/
-public class UserESEnity extends BaseESEnity {
+public class Student implements Serializable {
 
 	private String name;
 
 	@Field(type = Text, store = true, fielddata = true)
-	private String type;
-
+	private String message;
 }
