@@ -9,4 +9,4 @@ java 连接 elasticsearch5.x 集群及Java API代码
 java 连接 elasticsearch6.x 集群及Java API代码
 
 ## package  elasticsearchAction
-elasticsearch 二次开发，包含增删改查底层操作
+elasticsearch 二次开发，包含增删改查底层操作（当前ES版本为5.x）
