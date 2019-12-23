@@ -9,4 +9,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class UserElasticSearchResposity extends PublicElasticSearchResposity<UserESEnity> {
 
+	public void searchScroll (){
+
+	}
+
 }
