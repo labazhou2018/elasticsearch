@@ -15,23 +15,24 @@
  */
 package com.elastic.annotations;
 
-import org.springframework.core.annotation.AliasFor;
 import org.springframework.data.elasticsearch.annotations.DateFormat;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 
 import java.lang.annotation.*;
 
+/**
+ * @author Rizwan Idrees
+ * @author Mohsin Husen
+ * @author Artur Konczak
+ * @author Jonathan Yan
+ * @author Jakub Vavrik
+ * @author Kevin Leturc
+ */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
 @Documented
 @Inherited
 public @interface Field {
-
-	@AliasFor("name")
-	String value() default "";
-
-	@AliasFor("value")
-	String name() default "";
 
 	FieldType type() default FieldType.Auto;
 
@@ -56,23 +57,4 @@ public @interface Field {
 	boolean includeInParent() default false;
 
 	String[] copyTo() default {};
-
-	int ignoreAbove() default -1;
-
-	boolean coerce() default true;
-
-	boolean docValues() default true;
-
-	boolean ignoreMalformed() default false;
-
-	boolean indexPhrases() default false;
-
-
-	boolean norms() default true;
-
-
-	String nullValue() default "";
-
-
-	double scalingFactor() default 1;
 }

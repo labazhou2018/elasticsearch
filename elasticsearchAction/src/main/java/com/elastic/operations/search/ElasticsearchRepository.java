@@ -13,25 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.elastic.annotations;
+package com.elastic.operations.search;
+
+import com.elastic.beans.es.BaseESEnity;
+
+import java.util.List;
+import java.util.Optional;
 
 /**
- * @author Rizwan Idrees
- * @author Mohsin Husen
- * @author Artur Konczak
+ * ES操作接口层
  */
-public enum FieldType {
-	Text,
-	Integer,
-	Long,
-	Date,
-	Float,
-	Double,
-	Boolean,
-	Object,
-	Auto,
-	Nested,
-	Ip,
-	Attachment,
-	Keyword
+
+public interface ElasticsearchRepository<T> {
+
+	public Optional<T> search(String id);
+
+	public void insert(T enity) throws Exception;
+
+	public void update(T enity);
+
+	public void delete(String id);
+
 }

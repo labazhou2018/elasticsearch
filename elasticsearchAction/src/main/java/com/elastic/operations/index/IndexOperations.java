@@ -13,10 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.elastic.operations;
+package com.elastic.operations.index;
 
 import org.elasticsearch.cluster.metadata.AliasMetaData;
-import org.springframework.data.elasticsearch.core.mapping.IndexCoordinates;
 import org.springframework.data.elasticsearch.core.query.AliasQuery;
 
 import java.util.List;
@@ -157,14 +156,6 @@ public interface IndexOperations {
 	 */
 	Map<String, Object> getMapping(IndexCoordinates index);
 
-	/**
-	 * Add an alias.
-	 *
-	 * @param query query defining the alias
-	 * @param index the index for which to add an alias
-	 * @return true if the alias was created
-	 */
-	boolean addAlias(AliasQuery query, IndexCoordinates index);
 
 	/**
 	 * Remove an alias.
@@ -219,12 +210,7 @@ public interface IndexOperations {
 	 */
 	Map<String, Object> getSettings(Class<?> clazz, boolean includeDefaults);
 
-	/**
-	 * Refresh the index(es).
-	 *
-	 * @param index the index to refresh
-	 */
-	void refresh(IndexCoordinates index);
+
 
 	/**
 	 * Refresh the index.

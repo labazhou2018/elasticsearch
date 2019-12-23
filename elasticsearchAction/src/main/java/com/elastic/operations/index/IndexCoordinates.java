@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.elastic.operations;
+package com.elastic.operations.index;
 
 import org.springframework.lang.Nullable;
 import org.springframework.util.Assert;

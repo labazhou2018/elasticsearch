@@ -1,7 +1,6 @@
 package com.elastic.exception;
 
 /**
- * @Author: wang luqi
  * @Date: 2019/3/7 11:46
  **/
 public class ElasticSearchException extends RuntimeException {
