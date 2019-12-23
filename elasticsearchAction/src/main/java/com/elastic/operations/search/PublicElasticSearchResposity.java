@@ -2,7 +2,6 @@ package com.elastic.operations.search;
 
 import com.elastic.Utils.JacksonHelper;
 import com.elastic.beans.es.BaseESEnity;
-import org.elasticsearch.action.bulk.BulkResponse;
 import org.elasticsearch.action.delete.DeleteResponse;
 import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.index.IndexResponse;
@@ -17,8 +16,6 @@ import org.springframework.util.StringUtils;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.Collections;
-import java.util.List;
 import java.util.Optional;
 
 /**
