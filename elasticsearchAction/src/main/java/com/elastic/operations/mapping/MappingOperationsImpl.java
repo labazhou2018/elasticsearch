@@ -39,8 +39,14 @@ public class MappingOperationsImpl implements MappingOperations {
 		Assert.notNull(type, "No type defined for putMapping()");
 		Map mappings = null;
 		try {
-			mappings = client.admin().indices().getMappings(new GetMappingsRequest().indices(indexName).types(type))
-					.actionGet().getMappings().get(indexName).get(type).getSourceAsMap();
+			mappings = client.admin()
+					.indices()
+					.getMappings(new GetMappingsRequest().indices(indexName).types(type))
+					.actionGet()
+					.getMappings()
+					.get(indexName)
+					.get(type)
+					.getSourceAsMap();
 		} catch (Exception e) {
 			throw new ElasticsearchException(
 					"Error while getting mapping for indexName : " + indexName + " type : " + type + " " + e.getMessage());
