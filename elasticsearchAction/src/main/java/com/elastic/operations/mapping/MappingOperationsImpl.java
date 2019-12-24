@@ -22,7 +22,11 @@ public class MappingOperationsImpl implements MappingOperations {
 	public boolean putMapping(String indexName, String type, Object mapping) {
 		Assert.notNull(indexName, "No index defined for putMapping()");
 		Assert.notNull(type, "No type defined for putMapping()");
-		PutMappingRequestBuilder requestBuilder = client.admin().indices().preparePutMapping(indexName).setType(type);
+		PutMappingRequestBuilder requestBuilder = client.admin()
+				.indices()
+				.preparePutMapping(indexName)
+				.setType(type);
+
 		if (mapping instanceof String) {
 			requestBuilder.setSource(String.valueOf(mapping));
 		} else if (mapping instanceof Map) {

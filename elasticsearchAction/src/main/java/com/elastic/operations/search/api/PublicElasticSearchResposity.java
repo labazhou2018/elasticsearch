@@ -1,4 +1,4 @@
-package com.elastic.operations.search;
+package com.elastic.operations.search.api;
 
 import com.elastic.Utils.JacksonHelper;
 import com.elastic.beans.es.BaseESEnity;

@@ -1,4 +1,4 @@
-package com.elastic.operations.search;
+package com.elastic.operations.search.api;
 
 import com.elastic.beans.es.StudentESEnity;
 import org.springframework.stereotype.Repository;

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.elastic.operations.search;
+package com.elastic.operations.search.api;
 
 import com.elastic.beans.es.BaseESEnity;
 

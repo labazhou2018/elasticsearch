@@ -1,12 +1,10 @@
-package com.elastic.operations.search;
+package com.elastic.operations.search.api;
 
 import com.elastic.annotations.Document;
 import com.elastic.beans.es.BaseESEnity;
 import com.elastic.operations.mapping.MappingOperations;
-import org.elasticsearch.client.Client;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.AnnotatedElementUtils;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.elasticsearch.annotations.Mapping;
@@ -25,10 +23,9 @@ import java.lang.reflect.Type;
 /**
  * @Date: 2019/12/19 17:46
  **/
-public abstract class AbstractElasticSearchResposity<T extends BaseESEnity>{
+public abstract class AbstractElasticSearchResposity<T extends BaseESEnity> {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(AbstractElasticSearchResposity.class);
-
 
 
 	public MappingOperations mappingOperations;
