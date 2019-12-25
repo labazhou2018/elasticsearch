@@ -22,7 +22,7 @@ import java.net.UnknownHostException;
  *          集成版本的client API会被去掉一部分，不能完全体现ElasticSearch特性；
  **/
 @Configuration("classpath:elasticsearch.properties")
-public class SpringDataClientBuild {
+public class SpringDataClientHelper {
 
 	@Value("${elastic.cluster.name}")
 	private String CLUSTER_NAME;
@@ -36,10 +36,10 @@ public class SpringDataClientBuild {
 	/**
 	 * 在Spring中，bean可以被定义为两种模式：prototype（多例）和singleton（单例）
 	 * singleton（单例）：只有一个共享的实例存在，所有对这个bean的请求都会返回这个唯一的实例。Spring bean 默认是单例模式.
-	 * prototype（多例）：对这个bean的每次请求都会创建一个新的bean实例，类似于new。
+	 * prototype（原型）：对这个bean的每次请求都会创建一个新的bean实例，类似于new。
 	 */
 	@Bean
-	@Scope("prototype")
+	@Scope("singleton")
 	public Client getClient() {
 
 		String[] hostNamesPort = CLUSTER_HOSTNAME_PORT.split(",");
