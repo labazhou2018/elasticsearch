@@ -34,7 +34,7 @@ public class SpringMultiClientHelper {
 				SpringMultiClientConfig.getLocalClusterClientTransportsniff());
 	}
 
-	public Client clientInit(String CLUSTER_HOSTNAME_PORT,String CLUSTER_NAME,String CLUSTER_CLIENT_TRANSPORTSNIFF){
+	public Client clientInit(String CLUSTER_HOSTNAME_PORT, String CLUSTER_NAME, String CLUSTER_CLIENT_TRANSPORTSNIFF) {
 		String[] hostNamesPort = CLUSTER_HOSTNAME_PORT.split(",");
 
 		Settings settings = Settings.builder()
@@ -54,7 +54,7 @@ public class SpringMultiClientHelper {
 		int port;
 		String[] temp;
 
-		if (0 != hostNamesPort.length){
+		if (0 != hostNamesPort.length) {
 			for (String hostPort : hostNamesPort) {
 				try {
 					temp = hostPort.split(":");

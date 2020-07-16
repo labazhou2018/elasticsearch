@@ -6,6 +6,7 @@ import static org.springframework.data.elasticsearch.annotations.FieldType.Text;
 
 /**
  * 用户实体对应的ES实体
+ *
  * @Date: 2019/12/19 17:22
  **/
 public class UserESEnity extends BaseESEnity {

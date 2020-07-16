@@ -1,7 +1,6 @@
 package com.elastic;
 
 import com.elastic.client.highlevelclient.HighLevelClient;
-import org.elasticsearch.client.Client;
 import org.junit.Test;
 
 import java.util.concurrent.ExecutorService;
@@ -10,7 +9,8 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
-	测试类描述
+ * 测试类描述
+ *
  * @Date: 2019/3/15 11:18
  **/
 public class MultiThreadTest {
@@ -42,7 +42,7 @@ public class MultiThreadTest {
 		}
 		executorService.shutdown();
 
-        //关闭线程池
+		//关闭线程池
 		try {
 			while (!executorService.awaitTermination(10000, TimeUnit.MILLISECONDS)) {
 				System.out.println("10秒没有执行完，强制关闭线程池");

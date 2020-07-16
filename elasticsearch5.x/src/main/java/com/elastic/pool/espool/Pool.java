@@ -7,13 +7,14 @@ import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
 
 /**
  * 池化技术
+ *
  * @Date: 2019/3/7 11:38
  **/
 public class Pool<T> implements Cloneable {
 
-	protected GenericObjectPool<T> internalPool ;
+	protected GenericObjectPool<T> internalPool;
 
-	public Pool(final GenericObjectPoolConfig poolConfig, PooledObjectFactory<T> factory){
+	public Pool(final GenericObjectPoolConfig poolConfig, PooledObjectFactory<T> factory) {
 		initPool(poolConfig, factory);
 	}
 
@@ -29,7 +30,7 @@ public class Pool<T> implements Cloneable {
 		this.internalPool = new GenericObjectPool<T>(factory, poolConfig);
 	}
 
-	protected void closeInternalPool(){
+	protected void closeInternalPool() {
 		try {
 			internalPool.close();
 		} catch (Exception e) {
@@ -37,7 +38,7 @@ public class Pool<T> implements Cloneable {
 		}
 	}
 
-	public T getResource(){
+	public T getResource() {
 		try {
 			return internalPool.borrowObject();
 		} catch (Exception e) {
@@ -46,13 +47,13 @@ public class Pool<T> implements Cloneable {
 	}
 
 
-	public void returnResource(final T resource){
+	public void returnResource(final T resource) {
 		if (resource != null) {
 			returnResourceObject(resource);
 		}
 	}
 
-	private void returnResourceObject(final T resource){
+	private void returnResourceObject(final T resource) {
 		if (resource == null) {
 			return;
 		}
@@ -63,7 +64,7 @@ public class Pool<T> implements Cloneable {
 		}
 	}
 
-	public void returnBrokenResource(final T resource){
+	public void returnBrokenResource(final T resource) {
 		if (resource != null) {
 			returnBrokenResourceObject(resource);
 		}
@@ -77,7 +78,7 @@ public class Pool<T> implements Cloneable {
 		}
 	}
 
-	public void destroy(){
+	public void destroy() {
 		closeInternalPool();
 	}
 

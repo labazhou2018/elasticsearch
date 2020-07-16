@@ -7,7 +7,7 @@ import java.net.UnknownHostException;
  **/
 public class ElasticSearchHostException extends UnknownHostException {
 
-	public ElasticSearchHostException(String messaget){
+	public ElasticSearchHostException(String messaget) {
 		super(messaget);
 	}
 

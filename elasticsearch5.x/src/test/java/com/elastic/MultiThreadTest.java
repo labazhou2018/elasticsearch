@@ -7,9 +7,8 @@ import org.junit.Test;
 import java.util.concurrent.*;
 
 /**
-*
-  测试类
-*/
+ * 测试类
+ */
 public class MultiThreadTest {
 
 

@@ -16,94 +16,95 @@ import java.util.ResourceBundle;
  **/
 public class ConfigUtils {
 
-    /**
-     * 配置文件
-     * */
-    private static String esConfigFileName = "elasticsearch.properties";
-
-    /**
-     * es集群名
-     * */
-    private static String esClusterName;
-    /**
-     * es集群ip地址
-     * */
-    private static String esClusterDiscoverHostName;
-    /**
-     * es集群是否加入嗅探功能
-     * */
-    private static String clientTransportSniff;
+	/**
+	 * 配置文件
+	 */
+	private static String esConfigFileName = "elasticsearch.properties";
 
 	/**
-	 *连接时间
+	 * es集群名
+	 */
+	private static String esClusterName;
+	/**
+	 * es集群ip地址
+	 */
+	private static String esClusterDiscoverHostName;
+	/**
+	 * es集群是否加入嗅探功能
+	 */
+	private static String clientTransportSniff;
+
+	/**
+	 * 连接时间
 	 */
 	private static String connectTimeMillis;
 	/**
-	 *连接池最大值
+	 * 连接池最大值
 	 */
-    private static String maxTotal;
+	private static String maxTotal;
 	/**
-	 *最大空闲
+	 * 最大空闲
 	 */
-    private static String maxIdle;
+	private static String maxIdle;
 	/**
-	 *最小空闲
+	 * 最小空闲
 	 */
-    private static String minIdle;
+	private static String minIdle;
 
-    private static Properties properties = new Properties();
-    static{
-        try {
-            ClassLoader classLoader = ConfigUtils.class.getClassLoader();
-            InputStream resourceAsStream = classLoader.getResourceAsStream(esConfigFileName);
-            properties.load(resourceAsStream);
-            init();
-        }catch (ESParamException e){
-            throw new ESParamException("es cluster init parameter exception",e);
-        }catch (IOException e){
-            e.printStackTrace();
-        }
+	private static Properties properties = new Properties();
 
-    }
+	static {
+		try {
+			ClassLoader classLoader = ConfigUtils.class.getClassLoader();
+			InputStream resourceAsStream = classLoader.getResourceAsStream(esConfigFileName);
+			properties.load(resourceAsStream);
+			init();
+		} catch (ESParamException e) {
+			throw new ESParamException("es cluster init parameter exception", e);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 
-    private static void init() {
+	}
 
-        esClusterName = properties.getProperty("elastic.cluster.name");
-        esClusterDiscoverHostName = properties.getProperty("elastic.cluster.discover.hostname");
-        clientTransportSniff = properties.getProperty("elastic.cluster.clientTransportSniff");
-	    connectTimeMillis=properties.getProperty("elastic.cluster.pool.connectTimeMillis");
-	    maxTotal=properties.getProperty("elastic.cluster.pool.maxTotal");
-	    maxIdle=properties.getProperty("elastic.cluster.pool.maxIdle");
-	    minIdle=properties.getProperty("elastic.cluster.pool.minIdle");
+	private static void init() {
 
-        if ("".equals(esClusterName)||"".equals(esClusterName)||"".equals(clientTransportSniff)){
-            throw new RuntimeException("elasticsearch 集群参数为空异常");
-        }
+		esClusterName = properties.getProperty("elastic.cluster.name");
+		esClusterDiscoverHostName = properties.getProperty("elastic.cluster.discover.hostname");
+		clientTransportSniff = properties.getProperty("elastic.cluster.clientTransportSniff");
+		connectTimeMillis = properties.getProperty("elastic.cluster.pool.connectTimeMillis");
+		maxTotal = properties.getProperty("elastic.cluster.pool.maxTotal");
+		maxIdle = properties.getProperty("elastic.cluster.pool.maxIdle");
+		minIdle = properties.getProperty("elastic.cluster.pool.minIdle");
 
-	    if ("".equals(connectTimeMillis)||"".equals(maxTotal)||"".equals(maxIdle)||"".equals(minIdle)){
-		    throw new RuntimeException("elasticsearch 连接池参数为空异常");
-	    }
-    }
+		if ("".equals(esClusterName) || "".equals(esClusterName) || "".equals(clientTransportSniff)) {
+			throw new RuntimeException("elasticsearch 集群参数为空异常");
+		}
 
-    public static String getEsClusterName() {
-        return esClusterName;
-    }
+		if ("".equals(connectTimeMillis) || "".equals(maxTotal) || "".equals(maxIdle) || "".equals(minIdle)) {
+			throw new RuntimeException("elasticsearch 连接池参数为空异常");
+		}
+	}
 
-    public static String getEsClusterDiscoverHostName() {
-        return esClusterDiscoverHostName;
-    }
+	public static String getEsClusterName() {
+		return esClusterName;
+	}
 
-    public static void setEsClusterDiscoverHostName(String esClusterDiscoverHostName) {
-        ConfigUtils.esClusterDiscoverHostName = esClusterDiscoverHostName;
-    }
+	public static String getEsClusterDiscoverHostName() {
+		return esClusterDiscoverHostName;
+	}
 
-    public static String getClientTransportSniff() {
-        return clientTransportSniff;
-    }
+	public static void setEsClusterDiscoverHostName(String esClusterDiscoverHostName) {
+		ConfigUtils.esClusterDiscoverHostName = esClusterDiscoverHostName;
+	}
 
-    public static void setClientTransportSniff(String clientTransportSniff) {
-        ConfigUtils.clientTransportSniff = clientTransportSniff;
-    }
+	public static String getClientTransportSniff() {
+		return clientTransportSniff;
+	}
+
+	public static void setClientTransportSniff(String clientTransportSniff) {
+		ConfigUtils.clientTransportSniff = clientTransportSniff;
+	}
 
 	public static String getConnectTimeMillis() {
 		return connectTimeMillis;

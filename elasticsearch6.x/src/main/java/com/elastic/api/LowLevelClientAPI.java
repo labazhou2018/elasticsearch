@@ -10,12 +10,14 @@ import org.apache.http.util.EntityUtils;
 import org.elasticsearch.client.Response;
 import org.elasticsearch.client.ResponseException;
 import org.elasticsearch.client.RestClient;
+
 import java.io.IOException;
 import java.util.Collections;
 import java.util.Map;
 
 /**
  * Description:rest client api
+ *
  * @Date: 2019/3/13 10:55
  **/
 public class LowLevelClientAPI {
@@ -51,12 +53,10 @@ public class LowLevelClientAPI {
 
 
 			System.out.println(jsonObject.get("hits"));
-		}catch (ResponseException e){
+		} catch (ResponseException e) {
 			e.printStackTrace();
 		}
 		System.out.println("23333");
 
 	}
-
-
 }

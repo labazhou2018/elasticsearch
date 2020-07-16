@@ -5,13 +5,13 @@ import org.elasticsearch.action.admin.indices.settings.get.GetSettingsResponse;
 import org.elasticsearch.common.settings.Settings;
 
 /**
- *
  * @Date: 2019/12/23 15:56
  **/
 public class IndexAdminImpl extends PublicAdmin implements IndexAdmin {
 
 	/**
 	 * Using an IndicesAdminClient, you can create an index with all default settings and no mapping
+	 *
 	 * @param indexName
 	 */
 	@Override
@@ -27,8 +27,8 @@ public class IndexAdminImpl extends PublicAdmin implements IndexAdmin {
 	@Override
 	public void indexSettings(String indexName, Settings settings) {
 		this.indicesAdminClient.prepareCreate(indexName)
-			.setSettings(settings)
-			.get();
+				.setSettings(settings)
+				.get();
 	}
 
 	/**
@@ -37,7 +37,7 @@ public class IndexAdminImpl extends PublicAdmin implements IndexAdmin {
 	 * @param indexName
 	 */
 	@Override
-	public void putMapping(String indexName,String type,String mappings) {
+	public void putMapping(String indexName, String type, String mappings) {
 		this.indicesAdminClient.prepareCreate(indexName)
 				.addMapping(type, mappings)
 				.get();
@@ -95,6 +95,6 @@ public class IndexAdminImpl extends PublicAdmin implements IndexAdmin {
 	public String getIndexShards(String indesName) {
 		return indicesAdminClient.prepareGetSettings(indesName)
 				.get()
-				.getSetting(indesName,"index.number_of_shards");
+				.getSetting(indesName, "index.number_of_shards");
 	}
 }

@@ -2,6 +2,7 @@ package com.elastic.pool.config;
 
 /**
  * 每一个节点对应的属性
+ *
  * @Date: 2019/3/7 14:13
  **/
 public class TransportClientNodeConfig {
@@ -12,11 +13,11 @@ public class TransportClientNodeConfig {
 	/**
 	 * 节点Host
 	 */
-	private String host ;
+	private String host;
 	/**
 	 * 节点端口号
 	 */
-	private int port ;
+	private int port;
 
 	public TransportClientNodeConfig() {
 	}

@@ -7,15 +7,15 @@ import java.io.IOException;
  **/
 public class ESIoException extends IOException {
 
-    public ESIoException(String messaget, Throwable throwable){
-        super(messaget,throwable);
-    }
+	public ESIoException(String messaget, Throwable throwable) {
+		super(messaget, throwable);
+	}
 
-    public ESIoException(String messaget){
-        super(messaget);
-    }
+	public ESIoException(String messaget) {
+		super(messaget);
+	}
 
-    public ESIoException(Throwable throwable){
-        super(throwable);
-    }
+	public ESIoException(Throwable throwable) {
+		super(throwable);
+	}
 }

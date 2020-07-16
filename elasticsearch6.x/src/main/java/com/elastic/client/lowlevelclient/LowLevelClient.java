@@ -2,15 +2,8 @@ package com.elastic.client.lowlevelclient;
 
 import com.elastic.client.ClientBuilders;
 import com.elastic.exception.ESIoException;
-import com.elastic.utils.ConfigUtils;
-import org.apache.http.Header;
-import org.apache.http.HttpHost;
-import org.apache.http.client.config.RequestConfig;
-import org.apache.http.impl.nio.client.HttpAsyncClientBuilder;
-import org.apache.http.message.BasicHeader;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestClientBuilder;
-import org.elasticsearch.client.RestHighLevelClient;
 
 import java.io.IOException;
 
@@ -27,7 +20,7 @@ public class LowLevelClient {
 	/**
 	 * RestHighLevelClient是基于RestClient构建
 	 */
-	public static RestClient getClient(){
+	public static RestClient getClient() {
 		ClientBuilders clientBuilders = new ClientBuilders();
 		return clientBuilders.getSimpleClientBuilder().build();
 	}

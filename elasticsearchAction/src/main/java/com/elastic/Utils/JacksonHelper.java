@@ -9,10 +9,10 @@ public class JacksonHelper {
 
 	private static ObjectMapper objectMapper;
 
-	public static ObjectMapper getObjectMapper(){
-		if (objectMapper==null){
-			synchronized (ObjectMapper.class){
-				if (null == objectMapper){
+	public static ObjectMapper getObjectMapper() {
+		if (objectMapper == null) {
+			synchronized (ObjectMapper.class) {
+				if (null == objectMapper) {
 					return new ObjectMapper();
 				}
 			}

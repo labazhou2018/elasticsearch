@@ -16,6 +16,7 @@ import org.elasticsearch.search.aggregations.bucket.histogram.Histogram;
 import org.elasticsearch.search.aggregations.bucket.terms.Terms;
 import org.elasticsearch.search.sort.FieldSortBuilder;
 import org.elasticsearch.search.sort.SortOrder;
+
 import static org.elasticsearch.index.query.QueryBuilders.termQuery;
 
 /**
@@ -25,7 +26,7 @@ public class SearchAPI {
 
 	Client client = TransportClientBuild.getClient();
 
-	public void search(){
+	public void search() {
 		SearchResponse response = client.prepareSearch("index1", "index2")
 				.setTypes("type1", "type2")
 				.setSearchType(SearchType.DFS_QUERY_THEN_FETCH)
@@ -37,7 +38,7 @@ public class SearchAPI {
 				.get();
 	}
 
-	public void searchScroll(){
+	public void searchScroll() {
 		QueryBuilder qb = termQuery("multi", "test");
 		String test = "test";
 		SearchResponse scrollResp = client.prepareSearch(test)
@@ -57,12 +58,12 @@ public class SearchAPI {
 			scrollResp = client.prepareSearchScroll(scrollResp.getScrollId()).setScroll(new TimeValue(60000)).execute().actionGet();
 		}
 		// Zero hits mark the end of the scroll and the while loop.
-		while(scrollResp.getHits().getHits().length != 0);
+		while (scrollResp.getHits().getHits().length != 0);
 
 	}
 
 
-	public void mutliSearch(){
+	public void mutliSearch() {
 		SearchRequestBuilder srb1 = client
 				.prepareSearch().setQuery(QueryBuilders.queryStringQuery("elasticsearch")).setSize(1);
 		SearchRequestBuilder srb2 = client
@@ -81,7 +82,7 @@ public class SearchAPI {
 		}
 	}
 
-	public void aggregationSearch(){
+	public void aggregationSearch() {
 		SearchResponse sr = client.prepareSearch()
 				.setQuery(QueryBuilders.matchAllQuery())
 				.addAggregation(

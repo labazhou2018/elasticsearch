@@ -15,9 +15,6 @@
  */
 package com.elastic.operations.search.api;
 
-import com.elastic.beans.es.BaseESEnity;
-
-import java.util.List;
 import java.util.Optional;
 
 /**

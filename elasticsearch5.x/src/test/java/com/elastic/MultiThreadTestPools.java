@@ -13,7 +13,9 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 
-/**测试类描述
+/**
+ * 测试类描述
+ *
  * @Date: 2019/3/15 11:24
  **/
 public class MultiThreadTestPools {
@@ -41,14 +43,14 @@ public class MultiThreadTestPools {
 		LinkedBlockingQueue<Runnable> linkBlockingQuene = new LinkedBlockingQueue<Runnable>();
 		ExecutorService cachedThreadPool = new ThreadPoolExecutor(10, 10, 0L, TimeUnit.MILLISECONDS, linkBlockingQuene);
 		for (int i = 0; i < 10; i++) {
-			final int index  = i;
+			final int index = i;
 			cachedThreadPool.execute(new Runnable() {
 
 				public void run() {
 					TransportClient client = null;
 					try {
 						client = pool.getResource();
-						System.out.println("当前线程"+index+"获取线程地址:" + client.toString());
+						System.out.println("当前线程" + index + "获取线程地址:" + client.toString());
 					} catch (Exception e) {
 						e.printStackTrace();
 					} finally {

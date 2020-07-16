@@ -4,6 +4,7 @@ import com.elastic.client.ClientBuilders;
 import com.elastic.exception.ESIoException;
 import org.elasticsearch.client.RestClientBuilder;
 import org.elasticsearch.client.RestHighLevelClient;
+
 import java.io.IOException;
 
 /**
@@ -26,7 +27,7 @@ public class HighLevelClient {
 
 	/**
 	 * 关闭连接
-	 * */
+	 */
 	public static void closeRestHighLevelClient() throws ESIoException {
 		if (null != restHighLevelClient) {
 			try {

@@ -80,7 +80,7 @@ public class TransportClientFactory implements PooledObjectFactory<TransportClie
 		}
 	}
 
-	public void activateObject(PooledObject<TransportClient> pooledObject){
+	public void activateObject(PooledObject<TransportClient> pooledObject) {
 		TransportClient client = pooledObject.getObject();
 		client.connectedNodes();
 	}

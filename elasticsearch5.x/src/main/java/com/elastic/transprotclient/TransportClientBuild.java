@@ -26,7 +26,7 @@ public class TransportClientBuild {
 
 	public static Client getClient() {
 		if (client == null) {
-			String [] hostNamesPort = CLUSTER_HOSTNAME_PORT.split(",");
+			String[] hostNamesPort = CLUSTER_HOSTNAME_PORT.split(",");
 
 			Settings settings = Settings.builder()
 					/*设置ES实例的名称*/
@@ -45,7 +45,7 @@ public class TransportClientBuild {
 			int port;
 			String[] temp;
 
-			if (0 != hostNamesPort.length){
+			if (0 != hostNamesPort.length) {
 				for (String hostPort : hostNamesPort) {
 					try {
 						temp = hostPort.split(":");

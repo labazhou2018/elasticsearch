@@ -9,12 +9,12 @@ import org.elasticsearch.index.query.QueryBuilders;
 public class QueryDSL {
 
 
-	public void matchAllQueries(){
+	public void matchAllQueries() {
 		QueryBuilder qb = QueryBuilders.matchAllQuery();
 
 	}
 
-	public void fullTextQuery(){
+	public void fullTextQuery() {
 		QueryBuilder qb1 = QueryBuilders.matchQuery(
 				"name",
 				"kimchy elasticsearch"
@@ -31,7 +31,7 @@ public class QueryDSL {
 
 	}
 
-	public void termQuery(){
+	public void termQuery() {
 		QueryBuilder qb1 = QueryBuilders.termQuery(
 				"name",
 				"kimchy"
@@ -46,35 +46,35 @@ public class QueryDSL {
 				.includeLower(true)
 				.includeUpper(false);
 
-		QueryBuilder qb =  QueryBuilders.rangeQuery("age")
+		QueryBuilder qb = QueryBuilders.rangeQuery("age")
 				.gte("10")
 				.lt("20");
 
 
-		QueryBuilder qb4 =  QueryBuilders.existsQuery("name");
+		QueryBuilder qb4 = QueryBuilders.existsQuery("name");
 
 
-		QueryBuilder qb5 =  QueryBuilders.wildcardQuery("user", "k?mc*");
+		QueryBuilder qb5 = QueryBuilders.wildcardQuery("user", "k?mc*");
 
 
-		QueryBuilder qb6 =  QueryBuilders.regexpQuery(
+		QueryBuilder qb6 = QueryBuilders.regexpQuery(
 				"name.first",
 				"s.*y");
 
 
-		QueryBuilder qb7 =  QueryBuilders.fuzzyQuery(
+		QueryBuilder qb7 = QueryBuilders.fuzzyQuery(
 				"name",
 				"kimzhy"
 		);
 
 
-		QueryBuilder qb8 =  QueryBuilders.typeQuery("my_type");
+		QueryBuilder qb8 = QueryBuilders.typeQuery("my_type");
 
 		/*type  可选项*/
-		QueryBuilder qb9 =  QueryBuilders.idsQuery("my_type", "type2")
+		QueryBuilder qb9 = QueryBuilders.idsQuery("my_type", "type2")
 				.addIds("1", "4", "100");
 
-		QueryBuilder qb10 =  QueryBuilders.idsQuery()
+		QueryBuilder qb10 = QueryBuilders.idsQuery()
 				.addIds("1", "4", "100");
 
 	}

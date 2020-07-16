@@ -5,15 +5,15 @@ package com.elastic.exception;
  **/
 public class ElasticSearchException extends RuntimeException {
 
-	public ElasticSearchException(String messaget,Throwable throwable){
-		super(messaget,throwable);
+	public ElasticSearchException(String messaget, Throwable throwable) {
+		super(messaget, throwable);
 	}
 
-	public ElasticSearchException(String messaget){
+	public ElasticSearchException(String messaget) {
 		super(messaget);
 	}
 
-	public ElasticSearchException(Throwable throwable){
+	public ElasticSearchException(Throwable throwable) {
 		super(throwable);
 	}
 

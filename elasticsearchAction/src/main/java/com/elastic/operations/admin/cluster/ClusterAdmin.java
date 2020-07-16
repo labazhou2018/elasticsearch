@@ -10,6 +10,7 @@ public interface ClusterAdmin {
 	/**
 	 * The cluster health API allows to get a very simple status on the health of
 	 * the cluster and also can give you some technical information about the cluster status per index
+	 *
 	 * @return
 	 */
 	public ClusterHealthResponse getClusterStatus();
@@ -19,5 +20,5 @@ public interface ClusterAdmin {
 	 * You can use the cluster health API to wait for a specific status
 	 * for the whole cluster or for a given index
 	 */
-	public void waitForStatus ();
+	public void waitForStatus();
 }

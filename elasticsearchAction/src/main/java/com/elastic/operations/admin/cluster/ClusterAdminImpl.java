@@ -4,10 +4,9 @@ import com.elastic.operations.admin.PublicAdmin;
 import org.elasticsearch.action.admin.cluster.health.ClusterHealthResponse;
 
 /**
- *
  * @Date: 2019/12/23 15:56
  **/
-public class ClusterAdminImpl extends PublicAdmin implements ClusterAdmin{
+public class ClusterAdminImpl extends PublicAdmin implements ClusterAdmin {
 
 	/**
 	 * The cluster health API allows to get a very simple status on the health of

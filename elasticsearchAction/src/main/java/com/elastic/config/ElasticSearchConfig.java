@@ -15,6 +15,7 @@ import java.net.UnknownHostException;
 
 /**
  * ES-Client封装工具类
+ *
  * @Date: 2019/12/19 15:32
  **/
 @Configuration("classpath:elasticsearch.properties")
@@ -57,7 +58,7 @@ public class ElasticSearchConfig {
 		int port;
 		String[] temp;
 
-		if (0 != hostNamesPort.length){
+		if (0 != hostNamesPort.length) {
 			for (String hostPort : hostNamesPort) {
 				try {
 					temp = hostPort.split(":");
